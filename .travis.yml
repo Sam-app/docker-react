@@ -7,3 +7,15 @@ before_install:
 
 script:
   - docker run -e CI=true sammeb/docker-react npm run test -- --coverage
+
+build:
+  - provider: elasticbeanstalk
+  - region: "us-east-2"
+  - app: "docker-react-aws"
+  - env: "Dockerreactaws-env"
+  - bucker_name: "elasticbeanstalk-us-east-2-312425826430"
+  - bucket_path: "docker-react-aws" # BY DEFAULT THE BUCKET_NAME IS SAME AS APP NAME
+  - on:
+    branch: master #every time we push to the branch master it deploys
+  access_key_id : $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
