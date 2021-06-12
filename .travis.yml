@@ -14,8 +14,8 @@ build:
   - app: "docker-react-aws"
   - env: "Dockerreactaws-env"
   - bucker_name: "elasticbeanstalk-us-east-2-312425826430"
-  - bucket_path: "docker-react-aws" # BY DEFAULT THE BUCKET_NAME IS SAME AS APP NAME
+  - bucket_path: "docker-react-aws" 
   - on:
-    branch: master #every time we push to the branch master it deploys
+    branch: master 
   access_key_id : $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
